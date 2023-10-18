@@ -1,8 +1,6 @@
 import React from 'react';
 import { HeaderBackButton } from 'react-navigation-stack';
-import {
-  Platform, I18nManager, Image, StyleSheet, Text, TouchableOpacity, View,
-} from 'react-native';
+import { Platform, I18nManager, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { DrawerActions } from 'react-navigation-drawer';
 import _backButtonImage from '../images/back_chevron.png';
@@ -28,7 +26,7 @@ export function BackButton(state) {
   // returning react-navigation's back button well styled for ios and android if rnrf4-supported customization
   // is not required
   if (!state.backButtonImage) {
-    return <HeaderBackButton onPress={onPress} title={state.backTitle} titleStyle={textButtonStyle} tintColor={tintColor} truncatedTitle={state.truncatedTitle} />;
+    return <HeaderBackButton onPress={onPress} label={state.backTitle} titleStyle={textButtonStyle} tintColor={tintColor} truncatedTitle={state.truncatedTitle} />;
   }
 
   const text = state.backTitle ? <Text style={textButtonStyle}>{state.backTitle}</Text> : null;
